@@ -531,7 +531,7 @@ body[data-view="ov"][data-tab="sg"] #head > .years{display:none}
 .rail7 button[aria-current="page"] .lb{font-weight:700}
 @media (min-width:1000px){ body[data-tab] .wrap{padding-left:116px} }
 @media (max-width:999px){ .rail7{display:none} }
-@media (max-height:600px){ .rail7 .lb{display:none} .rail7 button{padding:2px 0} }
+@media (max-height:680px){ .rail7 .lb{display:none} .rail7 button{padding:2px 0} }
 
 /* 하단 탭 바 — 화면 아래 가운데에 떠 있음 */
 .tab7{position:fixed;z-index:26;left:50%;bottom:calc(16px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);
@@ -546,7 +546,7 @@ body[data-view="ov"][data-tab="sg"] #head > .years{display:none}
 .tab7 button[aria-current="page"]{background:var(--tabOn);color:var(--tabOnInk);box-shadow:0 2px 10px rgba(20,32,27,.14)}
 .tab7 .q7{width:40px;padding:0;margin-left:4px;border-radius:50%;background:var(--deep);color:#fff;display:grid;place-items:center}
 .tab7 .q7:hover{background:var(--deep2)}
-@media (max-width:520px){ .tab7{padding:5px;gap:0} .tab7 button{padding:0 8px;font-size:12.5px;height:38px} .tab7 .q7{width:38px;padding:0;margin-left:3px} }
+@media (max-width:520px){ .tab7{padding:5px;gap:0} .tab7 button{padding:0 7px;font-size:12px;height:38px} .tab7 .q7{width:36px;height:36px;padding:0;margin-left:2px} }
 
 .rail7 button:focus-visible,.tab7 button:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
 
@@ -559,6 +559,103 @@ body[data-view="ov"][data-tab="sg"] #head > .years{display:none}
   .card,.appbar-in,.rail7,.tab7{border-color:var(--ink2)}
   .appbar-in,.rail7,.tab7{background:var(--card)}
 }
+
+/* ===================== v7.1 담당 배분 탭 ===================== */
+body[data-view="ov"][data-tab="asg"] #head > .years{display:none}
+.asg-acts{display:flex;flex-wrap:wrap;gap:6px}
+.asg-btn{height:38px;padding:0 14px;border-radius:999px;background:var(--pill);color:var(--ink2);font-weight:600;font-size:13px;border:1px solid var(--glassBd)}
+.asg-btn:hover{color:var(--ink)}
+.asg-btn:disabled{opacity:.45;cursor:default}
+.asg-btn.pri{background:var(--deep);color:#fff;border-color:transparent}
+.asg-tools{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:16px}
+.asg-seg{display:flex;gap:2px;background:var(--pill);padding:4px;border-radius:999px}
+.asg-seg button{height:34px;padding:0 14px;border-radius:999px;font-weight:600;font-size:13px;color:var(--ink2);background:transparent}
+.asg-seg button.on{background:var(--deep);color:#fff}
+.asg-sel,.asg-q{height:42px;border-radius:999px;border:1px solid var(--glassBd);background:var(--pill);color:var(--ink);font:inherit;font-size:13px;padding:0 16px;outline:none}
+.asg-sel{appearance:none;-webkit-appearance:none;padding-right:34px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%23888' stroke-width='3' stroke-linecap='round'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center}
+.asg-q{flex:1 1 180px;min-width:140px;max-width:280px}
+.asg-sel:focus-visible,.asg-q:focus{border-color:var(--deep)}
+
+.asg-bulk{display:none;flex-wrap:wrap;align-items:center;gap:6px;margin-top:12px;padding:8px 8px 8px 16px;border-radius:999px;background:var(--deep);color:#fff;font-size:13px}
+.asg-bulk.show{display:flex}
+.asg-bulk b{margin-right:6px}
+.asg-bulk button{height:32px;padding:0 14px;border-radius:999px;background:rgba(255,255,255,.16);color:#fff;font-weight:600}
+.asg-bulk button:hover{background:rgba(255,255,255,.26)}
+.asg-bulk button.ghost{background:transparent;margin-left:auto}
+
+.asg-pool{max-height:min(440px,44vh);border-radius:20px;background:color-mix(in srgb,var(--card) 55%,transparent);border:1px solid var(--glassBd);transition:box-shadow .2s ease}
+.tbl.asg th{cursor:pointer;user-select:none}
+.tbl.asg th.ck,.tbl.asg th.l,.tbl.asg td.l{text-align:left}
+.tbl.asg th.ck{cursor:default}
+.tbl.asg td,.tbl.asg th{padding:8px 9px}
+.tbl.asg td.ck,.tbl.asg th.ck{width:34px;padding-left:14px}
+.tbl.asg input[type=checkbox]{width:16px;height:16px;accent-color:var(--deep);cursor:pointer;margin:0;vertical-align:middle}
+.tbl.asg tbody tr{cursor:grab}
+.tbl.asg tbody tr.sel td{background:color-mix(in srgb,var(--lime) 22%,transparent)}
+.tbl.asg tbody tr.asg-lift td{opacity:.45}
+.tbl.asg td b{font-weight:700}
+.tbl.asg td small{display:block;font-size:11px;color:var(--muted);margin-top:1px}
+.tbl.asg td sup{font-size:10px;color:var(--down);margin-left:3px;vertical-align:super}
+.tbl.asg td.up{color:var(--up)} .tbl.asg td.down{color:var(--down)}
+.tbl.asg td.mn{color:var(--ink2);font-size:12px}
+.tbl.asg tr.as-p td:nth-child(2) b::after,.tbl.asg tr.as-m td:nth-child(2) b::after{font-size:10px;font-weight:700;margin-left:6px;padding:1px 7px;border-radius:999px;vertical-align:1px}
+.tbl.asg tr.as-p td:nth-child(2) b::after{content:"박도율";background:var(--deep);color:#fff}
+.tbl.asg tr.as-m td:nth-child(2) b::after{content:"문길환";background:#5B9A8B;color:#fff}
+.asg-spark{display:block}
+.asg-spark rect{fill:var(--deep)}
+.asg-spark rect.p{fill:var(--lime)}
+.asg-spark rect.z{fill:var(--line)}
+.asg-pick{white-space:nowrap}
+.asg-pick button{width:30px;height:30px;border-radius:50%;background:var(--pill);border:1px solid var(--glassBd);color:var(--ink2);font-weight:700;font-size:12px;margin-right:4px}
+.asg-pick button:hover{border-color:var(--deep);color:var(--ink)}
+.asg-pick button[data-as="p"].on{background:var(--deep);color:#fff;border-color:transparent}
+.asg-pick button[data-as="m"].on{background:#5B9A8B;color:#fff;border-color:transparent}
+.asg-empty{text-align:center!important;color:var(--muted);padding:28px 12px!important;white-space:normal!important}
+.asg-note{margin-top:8px}
+
+.asg-boxes{display:flex;flex-wrap:wrap;gap:16px;margin-top:18px}
+.asg-box{flex:1 1 360px;min-width:0;border-radius:24px;padding:18px 20px;background:color-mix(in srgb,var(--card) 62%,transparent);border:1px solid var(--glassBd);transition:background-color .2s ease,border-color .2s ease,transform .25s var(--spring,ease)}
+#asgBoxp{border-top:4px solid var(--deep)} #asgBoxm{border-top:4px solid #5B9A8B}
+.asg-card.dragging .asg-box,#asgCard.dragging .asg-box,#asgCard.dragging .asg-pool{border-style:dashed}
+#asgCard.dragging [data-drop].over{background:color-mix(in srgb,var(--lime) 20%,var(--card));border-color:var(--deep);border-style:solid}
+#asgCard.dragging .asg-box.over{transform:translateY(-3px)}
+.asg-bh{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.asg-bh h3{margin:0;font-size:18px;font-weight:700;letter-spacing:-.02em}
+.asg-n{font-weight:700;font-size:13px;padding:3px 12px;border-radius:999px;background:var(--pill)}
+.asg-big{margin-top:10px}
+.asg-big b{display:block;font-size:32px;font-weight:800;letter-spacing:-.03em;line-height:1.15;font-variant-numeric:tabular-nums}
+.asg-big span{font-size:12px;color:var(--muted)}
+.asg-kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:14px 0 0;font-size:13px;font-variant-numeric:tabular-nums}
+.asg-kv dt{color:var(--muted)} .asg-kv dd{margin:0;min-width:0}
+.asg-kv .up{color:var(--up);font-weight:700} .asg-kv .down{color:var(--down);font-weight:700}
+.asg-kv small{color:var(--muted)}
+.asg-mb{display:flex;align-items:flex-end;gap:5px;height:86px;margin-top:16px;padding-top:4px}
+.asg-mb .c{flex:1;height:100%;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;gap:3px;min-width:0}
+.asg-mb i{display:block;width:100%;max-width:26px;border-radius:6px 6px 3px 3px;background:var(--deep);min-height:2px}
+#asgBoxm .asg-mb i{background:#5B9A8B}
+#asgBoxp .asg-mb .c.p i,#asgBoxm .asg-mb .c.p i{background:repeating-linear-gradient(135deg,var(--lime) 0 5px,color-mix(in srgb,var(--lime) 40%,transparent) 5px 10px)}
+.asg-mb small{font-size:10px;color:var(--muted);line-height:1}
+.asg-list{list-style:none;margin:14px 0 0;padding:0;max-height:300px;overflow:auto;display:flex;flex-direction:column;gap:6px}
+.asg-list li{display:flex;align-items:center;gap:10px;padding:8px 8px 8px 12px;border-radius:14px;background:var(--pill);cursor:grab;font-size:13px}
+.asg-list li.asg-lift{opacity:.45}
+.asg-list .nm{flex:1;min-width:0}
+.asg-list .nm b{display:block;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.asg-list .nm small{color:var(--muted);font-size:11px}
+.asg-list .v{font-weight:700;font-variant-numeric:tabular-nums;white-space:nowrap}
+.asg-list button{width:28px;height:28px;border-radius:50%;color:var(--muted);font-size:16px;line-height:1;flex:none}
+.asg-list button:hover{background:var(--card);color:var(--down)}
+.asg-list li.asg-drop-hint{justify-content:center;text-align:center;color:var(--muted);background:transparent;border:1.5px dashed var(--line);padding:22px 14px;cursor:default}
+
+.asg-bal{margin-top:16px}
+.asg-bar{display:flex;height:34px;border-radius:999px;overflow:hidden;background:var(--pill);font-size:12px}
+.asg-bar span{display:flex;align-items:center;min-width:0;padding:0 14px;white-space:nowrap;overflow:hidden;transition:flex-basis .45s var(--spring,ease)}
+.asg-bar .p{background:var(--deep);color:#fff}
+.asg-bar .m{background:#5B9A8B;color:#fff;justify-content:flex-end}
+.asg-baltx{display:flex;flex-wrap:wrap;gap:6px 20px;margin-top:10px;font-size:13px;color:var(--ink2);font-variant-numeric:tabular-nums}
+.asg-ghost{position:fixed;top:-100px;left:0;padding:8px 14px;border-radius:999px;background:#1D4A42;color:#fff;font:600 13px "Noto Sans KR",sans-serif}
+.asg-btn:focus-visible,.asg-seg button:focus-visible,.asg-pick button:focus-visible,.asg-list button:focus-visible,.asg-bulk button:focus-visible{outline:2px solid var(--deep);outline-offset:2px}
+@media (prefers-reduced-motion: reduce){ .asg-bar span,.asg-box{transition:none} #asgCard.dragging .asg-box.over{transform:none} }
+@media (max-width:640px){ .asg-big b{font-size:26px} .asg-bulk{border-radius:20px} .asg-bulk button.ghost{margin-left:0} }
 
 </style>
 </head>
@@ -2819,7 +2916,7 @@ function render(){
   det? renderOrgDetail() : renderOrgOverview();
   if(!det) renderBudget();
   det? renderSGDetail() : renderSG();
-  $('foot').innerHTML=`출처: SWP &gt; 영업지원(현장수첩) &gt; 대리점 주소록 · UCS &gt; 컨설턴트 &gt; 리포트 &gt; 년 담당 및 대리점별 매출합계 · SWP &gt; 활동 리포트 &gt; 대리점별 리포트(남부영업팀, 2024.01~2026.10 조회, 기록은 2026.01~) (조회일 ${META.asOf}) · 2026년 10월: SWP &gt; 판매 계획 &gt; 대리점별 실적(담당자별 주차 실적 합계, 2026-10-28 조회. 9월 실적을 UCS와 대조해 천원 단위 반올림 차이 외 일치 확인)<br>지도: 행정구역 경계 korea-drilldown-svg-map(MIT) · 대리점 위치는 주소의 동·읍·면 중심점(일부는 법정동→행정동 추정, 시군구 표시) · 3D 렌더링 three.js(MIT).<br>
+  $('foot').innerHTML=`출처: SWP &gt; 영업지원(현장수첩) &gt; 대리점 주소록 · UCS &gt; 컨설턴트 &gt; 리포트 &gt; 년 담당 및 대리점별 매출합계 · SWP &gt; 활동 리포트 &gt; 대리점별 리포트(남부영업팀, 2024.01~2026.10 조회, 기록은 2026.01~) (조회일 ${META.asOf}) · 담당 배분 탭: 2025년 월평균 = 연간 합계 ÷ 12, 2026년 월평균 = 1~10월 합계 ÷ 10(10월은 28일까지), 배정 결과는 이 브라우저에만 저장. · 2026년 10월: SWP &gt; 판매 계획 &gt; 대리점별 실적(담당자별 주차 실적 합계, 2026-10-28 조회. 9월 실적을 UCS와 대조해 천원 단위 반올림 차이 외 일치 확인)<br>지도: 행정구역 경계 korea-drilldown-svg-map(MIT) · 대리점 위치는 주소의 동·읍·면 중심점(일부는 법정동→행정동 추정, 시군구 표시) · 3D 렌더링 three.js(MIT).<br>
   매출 = 총공급가액(원). 2026년은 1~10월(10월은 SWP 판매 계획 › 대리점별 실적의 10.01~10.28 주문실적). 월평균 = 선택 연도 매출 ÷ 해당 연도 개월 수(2026년은 10개월). 성장·하락 = 월평균의 전년 대비 증감률(2026년은 1~10월 동기 비교, 10월은 28일까지라 전년 대비가 낮게 나올 수 있음). 활동 리포트 중 개인 건강 관련 문장은 생략했습니다. 대상: 주소지 경북·대구 21곳 + 중부영업팀 49곳 = 70곳 (현재 주소록 기준, 폐점 대리점 제외).`;
   $('foot').innerHTML += '<br>당월 매출: SWP &gt; 판매 계획 &gt; 대리점별 실적(2026.10.01~10.28 주문실적, 주차별 합계). 진척 = 당월 ÷ 작년 10월 한 달, 일평균 대비 = (당월 ÷ 경과 28일) ÷ (작년 10월 ÷ 31일) − 1. 월말 마감 주문이 몰리는 경우가 많아 진척률은 월말에 크게 오를 수 있습니다.<br>슈퍼겔 맥스 견본: ERP 타계정 출고현황(품목코드 100109, 2025.01.09~2026.10.27 전기, 취소 제외) 수량 기준. 환산금액 = 수량 × 원본 단가 7,654원. 대구경북(주소지 기준)은 중부영업팀 편입으로 집계. 폐점·주소록 외 대리점(청주수곡 330개·청주익창 50개·(신)수성 10개)은 대리점 표에서 제외하고 팀 비교에만 포함.';
   $('foot').innerHTML += '<br>조직 현황: UCS &gt; 유피관리 &gt; 파트현황(등록 유피·직급·파트, 2026-10-22 현재) · UCS &gt; 매출/입금 &gt; 유피 매출/출근 집계 현황(2026년 1~9월, 출근유피 = 월 출근 1일 이상, 10일+ = 10일 이상). 10월 출근은 아직 집계 전이라 9월 마감 기준. 대리점 대표 코드(직급 없음)는 유피 수에서 제외.';
@@ -2998,25 +3095,255 @@ render = function(){ _renderCur0(); S.sel? renderCurDetail() : renderCur(); };
 
 render();
 </script>
+<script id="asg7js">
+/* ===================== v7.1 담당 배분 탭 =====================
+   70곳을 박도율·문길환 두 담당에게 나눠 보는 시뮬레이션.
+   목록(위)에서 끌어 담당 칸(아래)에 놓거나, 줄의 '박'·'문' 버튼으로 배정.
+   배정 결과는 이 브라우저에 자동 저장(파일을 다시 열어도 유지). */
+(function(){
+  const PPL={p:{n:'박도율',emp:'박도율'}, m:{n:'문길환',emp:'문길환'}};
+  const KEY='agAssign7';
+  const MN=10;                                   // 2026년 1~10월 (10월은 28일까지)
+  const sum=a=>a.reduce((x,y)=>x+(y||0),0);
+  const W=k=>k*1000;                             // 천원 → 원 (won() 표시용)
+  const pct=r=> r===null||!isFinite(r)? '–' : (r>0?'+':'')+(r*100).toFixed(1)+'%';
+  const cls=r=> r===null||!isFinite(r)? '' : r>=0? 'up' : 'down';
+  const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  /* 대리점별 기본 수치 (천원) */
+  const D={};
+  AG.forEach(a=>{
+    const m25=(a.s['2025']||[]).slice(1,13), m26=(a.s['2026']||[]).slice(1,1+MN);
+    const n25=m25.filter(v=>v>0).length;
+    const a25=m25.length? sum(m25)/12 : null, a26=sum(m26)/MN;
+    D[a.ucs]={a, m26:Array.from({length:MN},(_,i)=>m26[i]||0), a25, n25, a26, chg: a25? a26/a25-1 : null};
+  });
+  const dOf=u=>{ const d=D[u], o=og(d.a), di=dist(d.a); return Object.assign(d,{road:di.road, up:o.t, att:(o.m&&o.m[8]?o.m[8][0]:0)}); };
+
+  /* 배정 상태 */
+  const initial=()=>{ const r={}; AG.forEach(a=>{ if(a.emp==='박도율') r[a.ucs]='p'; else if(a.emp==='문길환') r[a.ucs]='m'; }); return r; };
+  let A=null;
+  try{ const raw=JSON.parse(localStorage.getItem(KEY)||'null'); if(raw&&raw.v===1&&raw.a) A=raw.a; }catch(e){}
+  if(!A) A=initial();
+  Object.keys(A).forEach(u=>{ if(!D[u]||!PPL[A[u]]) delete A[u]; });
+  const hist=[];
+  const save=()=>{ try{ localStorage.setItem(KEY, JSON.stringify({v:1,a:A})); }catch(e){} };
+  function commit(fn){ hist.push(JSON.stringify(A)); if(hist.length>60) hist.shift(); fn(); save(); }
+
+  const AS={view:'pool', reg:'', emp:'', q:'', mon:'bar', sort:'a26', dir:-1, sel:new Set()};
+
+  /* 카드 마크업 — 지도 카드 앞에 넣음 (목록 카드는 맨 끝 유지) */
+  const regions=[...new Set(AG.map(a=>a.region))];
+  const emps=[...new Set(AG.map(a=>a.emp))];
+  const card=document.createElement('div');
+  card.className='card c12'; card.id='asgCard';
+  card.innerHTML=`
+    <div class="chead"><div><h2 class="ctitle">담당 배분</h2><div class="csub" id="asgSub"></div></div>
+      <div class="asg-acts"><button type="button" class="asg-btn" id="asgUndo">되돌리기</button><button type="button" class="asg-btn" id="asgReset">처음 배정으로</button><button type="button" class="asg-btn" id="asgClear">모두 비우기</button><button type="button" class="asg-btn pri" id="asgCopy">결과 복사</button></div></div>
+    <div class="asg-tools">
+      <div class="seg asg-seg" id="asgView"><button type="button" data-v="pool" class="on">미배정</button><button type="button" data-v="all">전체 70곳</button></div>
+      <select class="asg-sel" id="asgReg" aria-label="지역"><option value="">지역 전체</option>${regions.map(r=>`<option>${r}</option>`).join('')}</select>
+      <select class="asg-sel" id="asgEmp" aria-label="현재 담당"><option value="">현재 담당 전체</option>${emps.map(r=>`<option>${r}</option>`).join('')}</select>
+      <input class="asg-q" id="asgQ" type="search" placeholder="대리점 검색" aria-label="대리점 검색" autocomplete="off">
+      <div class="seg asg-seg" id="asgMon"><button type="button" data-v="bar" class="on">월별 막대</button><button type="button" data-v="num">월별 숫자</button></div>
+    </div>
+    <div class="asg-bulk" id="asgBulk"></div>
+    <div class="scroll asg-pool" id="asgPool" data-drop="x"><table class="tbl asg" id="asgTbl"></table></div>
+    <div class="csub asg-note" id="asgNote"></div>
+    <div class="asg-boxes"><section class="asg-box" id="asgBoxp" data-drop="p" aria-label="박도율 담당"></section><section class="asg-box" id="asgBoxm" data-drop="m" aria-label="문길환 담당"></section></div>
+    <div class="asg-bal" id="asgBal"></div>`;
+  $('overview').insertBefore(card, $('mapCard'));
+
+  /* ---------- 그리기 ---------- */
+  function spark(m){
+    const mx=Math.max(1,...m), w=9, g=3, H=26;
+    return `<svg class="asg-spark" width="${MN*(w+g)-g}" height="${H}" viewBox="0 0 ${MN*(w+g)-g} ${H}" aria-hidden="false" role="img" aria-label="2026년 월별 매출">`+
+      m.map((v,i)=>{ const h=Math.max(v>0?2:1, v/mx*(H-2)); return `<rect x="${i*(w+g)}" y="${H-h}" width="${w}" height="${h}" rx="2" class="${i===MN-1?'p':''}${v>0?'':' z'}"><title>${i+1}월${i===MN-1?'(28일까지)':''} ${nf(v)}천원</title></rect>`; }).join('')+`</svg>`;
+  }
+  function rows(){
+    const q=AS.q.trim().toLowerCase();
+    let L=AG.map(a=>dOf(a.ucs)).filter(d=>{
+      const a=d.a;
+      if(AS.view==='pool' && A[a.ucs]) return false;
+      if(AS.reg && a.region!==AS.reg) return false;
+      if(AS.emp && a.emp!==AS.emp) return false;
+      if(q && !(a.name.toLowerCase().includes(q)||String(a.ucs).includes(q)||(a.ceo||'').includes(q)||(a.sgg||'').includes(q))) return false;
+      return true; });
+    const key={name:d=>d.a.name, emp:d=>d.a.emp, region:d=>d.a.region, road:d=>d.road, up:d=>d.up, a25:d=>d.a25??-1, a26:d=>d.a26, chg:d=>d.chg??-9, asg:d=>A[d.a.ucs]||'z'}[AS.sort];
+    L.sort((x,y)=>{ const p=key(x), r=key(y); return (typeof p==='string'? p.localeCompare(r,'ko') : p-r)*AS.dir; });
+    return L;
+  }
+  function th(k,l,extra=''){ const on=AS.sort===k; return `<th data-s="${k}" class="${extra}" aria-sort="${on?(AS.dir>0?'ascending':'descending'):'none'}">${l}${on?(AS.dir>0?' ▲':' ▼'):''}</th>`; }
+  function renderTable(){
+    const L=rows(), num=AS.mon==='num';
+    const allOn=L.length && L.every(d=>AS.sel.has(d.a.ucs));
+    let h=`<thead><tr><th class="ck"><input type="checkbox" id="asgAll" aria-label="보이는 대리점 모두 선택" ${allOn?'checked':''}></th>${th('name','대리점','l')}${th('emp','현재 담당','l')}${th('region','지역','l')}${th('road','거리')}${th('up','유피')}${th('a25','25년 월평균')}`+
+      (num? Array.from({length:MN},(_,i)=>`<th>${i+1}월${i===MN-1?'*':''}</th>`).join('') : `<th class="l">26년 월별 (1~10월)</th>`)+
+      `${th('a26','26년 월평균')}${th('chg','증감')}${th('asg','배정','l')}</tr></thead><tbody>`;
+    if(!L.length) h+=`<tr><td colspan="${num?20:11}" class="asg-empty">${AS.view==='pool'&&!AS.reg&&!AS.emp&&!AS.q?'모든 대리점이 배정됐습니다. 위의 \'전체 70곳\'을 누르면 배정된 곳까지 함께 볼 수 있습니다.':'조건에 맞는 대리점이 없습니다. 필터나 검색어를 바꿔 보세요.'}</td></tr>`;
+    L.forEach(d=>{ const a=d.a, u=a.ucs, s=A[u], ck=AS.sel.has(u);
+      h+=`<tr draggable="true" data-u="${u}" class="${ck?'sel':''} ${s?'as-'+s:''}">
+        <td class="ck"><input type="checkbox" data-ck="${u}" aria-label="${esc(a.name)} 선택" ${ck?'checked':''}></td>
+        <td class="l"><b>${esc(a.name)}</b><small>${esc(a.sgg||'')}</small></td>
+        <td class="l">${a.emp}</td><td class="l">${a.region}</td>
+        <td>${Math.round(d.road)}km</td><td>${nf(d.up)}</td>
+        <td>${d.a25===null?'–':nf(d.a25)}${d.n25&&d.n25<12?`<sup title="2025년 ${d.n25}개월만 실적">${d.n25}개월</sup>`:''}</td>`+
+        (num? d.m26.map(v=>`<td class="mn">${v?nf(v):'–'}</td>`).join('') : `<td class="l">${spark(d.m26)}</td>`)+
+        `<td><b>${nf(d.a26)}</b></td><td class="${cls(d.chg)}">${pct(d.chg)}</td>
+        <td class="l asg-pick"><button type="button" data-as="p" data-u="${u}" class="${s==='p'?'on':''}" aria-pressed="${s==='p'}" title="박도율에게 배정">박</button><button type="button" data-as="m" data-u="${u}" class="${s==='m'?'on':''}" aria-pressed="${s==='m'}" title="문길환에게 배정">문</button></td></tr>`; });
+    $('asgTbl').innerHTML=h+'</tbody>';
+  }
+  function stat(list){
+    const s={n:list.length, a25:0, a26:0, m:Array(MN).fill(0), road:0, far:null, up:0, att:0};
+    list.forEach(d=>{ s.a25+=d.a25||0; s.a26+=d.a26; d.m26.forEach((v,i)=>s.m[i]+=v); s.road+=d.road; if(!s.far||d.road>s.far.road) s.far=d; s.up+=d.up; s.att+=d.att; });
+    s.chg=s.a25? s.a26/s.a25-1 : null; s.avgRoad=s.n? s.road/s.n : 0; return s;
+  }
+  function renderBox(k){
+    const P=PPL[k];
+    const list=AG.filter(a=>A[a.ucs]===k).map(a=>dOf(a.ucs)).sort((x,y)=>y.a26-x.a26);
+    const base=stat(AG.filter(a=>a.emp===P.emp).map(a=>dOf(a.ucs)));
+    const s=stat(list), dl=s.a26-base.a26, mx=Math.max(1,...s.m);
+    const regs={}; list.forEach(d=>regs[d.a.region]=(regs[d.a.region]||0)+1);
+    $('asgBox'+k).innerHTML=`
+      <div class="asg-bh"><h3>${P.n}</h3><span class="asg-n">${s.n}곳</span></div>
+      <div class="asg-big"><b>${won(W(s.a26))}</b><span>2026년 월평균 합계</span></div>
+      <dl class="asg-kv">
+        <dt>2025년 월평균</dt><dd>${won(W(s.a25))} <span class="${cls(s.chg)}">${pct(s.chg)}</span></dd>
+        <dt>지금 배정 대비</dt><dd><span class="${dl>=0?'up':'down'}">${dl>=0?'+':'−'}${won(W(Math.abs(dl)))}</span> <small>(현재 ${base.n}곳 ${won(W(base.a26))})</small></dd>
+        <dt>지역</dt><dd>${Object.entries(regs).sort((a,b)=>b[1]-a[1]).map(([r,n])=>`${r} ${n}`).join(' · ')||'–'}</dd>
+        <dt>사무실 거리</dt><dd>${s.n?`평균 ${Math.round(s.avgRoad)}km · 가장 먼 곳 ${esc(s.far.a.name)} ${Math.round(s.far.road)}km`:'–'}</dd>
+        <dt>유피</dt><dd>등록 ${nf(s.up)}명 · 9월 출근 ${nf(s.att)}명</dd>
+      </dl>
+      <div class="asg-mb" role="img" aria-label="${P.n} 2026년 월별 매출 합계">${s.m.map((v,i)=>`<div class="c${i===MN-1?' p':''}" title="${i+1}월${i===MN-1?'(28일까지)':''} ${won(W(v))}"><i style="height:${(v/mx*100).toFixed(1)}%"></i><small>${i+1}</small></div>`).join('')}</div>
+      <ul class="asg-list">${list.length? list.map(d=>`<li draggable="true" data-u="${d.a.ucs}"><span class="nm"><b>${esc(d.a.name)}</b><small>${d.a.region} · 현재 ${d.a.emp} · ${Math.round(d.road)}km</small></span><span class="v">${won(W(d.a26))}</span><button type="button" data-as="x" data-u="${d.a.ucs}" aria-label="${esc(d.a.name)} 배정 빼기" title="목록으로 돌려보내기">×</button></li>`).join('')
+        : `<li class="asg-drop-hint">위 목록에서 대리점을 끌어다 여기에 놓거나, 줄 끝의 '${P.n[0]}' 버튼을 누르세요</li>`}</ul>`;
+    return s;
+  }
+  function render(){
+    const office=getOffice().n;
+    $('asgSub').textContent=`전체 70곳을 두 담당에게 나눠 봅니다 · 위쪽 범위 버튼과 상관없이 항상 70곳 기준 · 거리는 ${office} 사무실 기준 예상 도로거리`;
+    $('asgNote').textContent=`단위: 천원 · 25년 월평균 = 2025년 합계 ÷ 12 · 26년 월평균 = 2026년 1~10월 합계 ÷ 10 (10월은 28일까지라 월평균이 실제보다 조금 낮게 나옴) · 유피 = 등록 유피(조직 현황 9월 기준)`;
+    document.querySelectorAll('#asgView button').forEach(b=>b.classList.toggle('on',b.dataset.v===AS.view));
+    document.querySelectorAll('#asgMon button').forEach(b=>b.classList.toggle('on',b.dataset.v===AS.mon));
+    renderTable();
+    const sp=renderBox('p'), sm=renderBox('m');
+    const rest=stat(AG.filter(a=>!A[a.ucs]).map(a=>dOf(a.ucs)));
+    const tot=sp.a26+sm.a26, rp=tot? sp.a26/tot : .5, gap=tot? Math.abs(sp.a26-sm.a26) : 0;
+    $('asgBal').innerHTML=`
+      <div class="asg-bar"><span class="p" style="flex-basis:${(rp*100).toFixed(1)}%"><b>박도율 ${(rp*100).toFixed(1)}%</b></span><span class="m" style="flex-basis:${((1-rp)*100).toFixed(1)}%"><b>문길환 ${((1-rp)*100).toFixed(1)}%</b></span></div>
+      <div class="asg-baltx"><span>두 담당 월평균 차이 <b>${won(W(gap))}</b></span><span>미배정 <b>${rest.n}곳</b> · 월평균 ${won(W(rest.a26))}</span><span>배정 합계 ${sp.n+sm.n}곳 · 월평균 ${won(W(tot))}</span></div>`;
+    updSel();
+    $('asgUndo').disabled=!hist.length;
+  }
+  /* 선택만 바뀔 때는 표를 다시 그리지 않음 (포커스 유지) */
+  function updSel(){
+    const n=AS.sel.size;
+    $('asgBulk').innerHTML= n? `<b>${n}곳 선택</b><button type="button" data-bulk="p">박도율에게</button><button type="button" data-bulk="m">문길환에게</button><button type="button" data-bulk="x">배정 빼기</button><button type="button" data-bulk="clr" class="ghost">선택 해제</button>` : '';
+    $('asgBulk').classList.toggle('show', !!n);
+    const trs=[...document.querySelectorAll('#asgTbl tbody tr[data-u]')];
+    trs.forEach(tr=>{ const on=AS.sel.has(tr.dataset.u); tr.classList.toggle('sel',on); const c=tr.querySelector('input[data-ck]'); if(c) c.checked=on; });
+    const all=$('asgAll'); if(all){ const k=trs.filter(tr=>AS.sel.has(tr.dataset.u)).length; all.checked=!!trs.length&&k===trs.length; all.indeterminate=k>0&&k<trs.length; }
+  }
+  window.renderAsg=render;
+
+  /* ---------- 배정 동작 ---------- */
+  const flash=k=>{ const el=k==='x'? $('asgPool') : $('asgBox'+k); if(!el||RM.matches) return;
+    el.animate([{boxShadow:'0 0 0 3px var(--lime)'},{boxShadow:'0 0 0 0 transparent'}],{duration:700,easing:'ease-out'}); };
+  function assign(ids,k){
+    ids=ids.filter(u=>D[u]); if(!ids.length) return;
+    commit(()=>ids.forEach(u=>{ if(k==='x') delete A[u]; else A[u]=k; }));
+    ids.forEach(u=>AS.sel.delete(u)); render(); flash(k);
+  }
+  card.addEventListener('click',e=>{
+    const t=e.target;
+    const b=t.closest('[data-as]'); if(b){ const u=b.dataset.u, k=b.dataset.as; assign([u], (k!=='x' && A[u]===k)? 'x' : k); return; }
+    const bk=t.closest('[data-bulk]'); if(bk){ const k=bk.dataset.bulk; if(k==='clr'){ AS.sel.clear(); updSel(); } else assign([...AS.sel],k); return; }
+    const h=t.closest('th[data-s]'); if(h){ const k=h.dataset.s; if(AS.sort===k) AS.dir*=-1; else { AS.sort=k; AS.dir=['name','emp','region','road','asg'].includes(k)?1:-1; } render(); return; }
+    const v=t.closest('#asgView button'); if(v){ AS.view=v.dataset.v; render(); return; }
+    const m=t.closest('#asgMon button'); if(m){ AS.mon=m.dataset.v; render(); return; }
+    if(t.closest('#asgUndo')){ if(hist.length){ A=JSON.parse(hist.pop()); save(); render(); } return; }
+    if(t.closest('#asgReset')){ commit(()=>{ A=initial(); }); AS.sel.clear(); render(); return; }
+    if(t.closest('#asgClear')){ commit(()=>{ A={}; }); AS.sel.clear(); render(); return; }
+    if(t.closest('#asgCopy')){ copyOut(); return; }
+    /* 줄의 빈 곳을 눌러도 선택/해제 */
+    const tr=t.closest('#asgTbl tbody tr[data-u]'); if(tr && !t.closest('input,button,a')){ const u=tr.dataset.u; AS.sel.has(u)?AS.sel.delete(u):AS.sel.add(u); updSel(); }
+  });
+  card.addEventListener('change',e=>{
+    const t=e.target;
+    if(t.dataset.ck){ t.checked? AS.sel.add(t.dataset.ck) : AS.sel.delete(t.dataset.ck); updSel(); }
+    else if(t.id==='asgAll'){ rows().forEach(d=>t.checked? AS.sel.add(d.a.ucs) : AS.sel.delete(d.a.ucs)); updSel(); }
+    else if(t.id==='asgReg'){ AS.reg=t.value; render(); }
+    else if(t.id==='asgEmp'){ AS.emp=t.value; render(); }
+  });
+  $('asgQ').addEventListener('input',e=>{ AS.q=e.target.value; render(); });
+
+  /* 끌어다 놓기 */
+  let dragIds=null;
+  card.addEventListener('dragstart',e=>{
+    const el=e.target.closest && e.target.closest('[draggable][data-u]'); if(!el) return;
+    const u=el.dataset.u;
+    dragIds = (el.tagName==='TR' && AS.sel.has(u) && AS.sel.size>1)? [...AS.sel] : [u];
+    try{ e.dataTransfer.setData('text/plain', dragIds.join(',')); e.dataTransfer.effectAllowed='move'; }catch(_){}
+    if(dragIds.length>1){ const g=document.createElement('div'); g.className='asg-ghost'; g.textContent=`${dragIds.length}곳 이동`; document.body.appendChild(g); try{ e.dataTransfer.setDragImage(g,20,16); }catch(_){} setTimeout(()=>g.remove(),0); }
+    card.classList.add('dragging'); el.classList.add('asg-lift');
+  });
+  card.addEventListener('dragend',e=>{ card.classList.remove('dragging'); card.querySelectorAll('.over,.asg-lift').forEach(x=>x.classList.remove('over','asg-lift')); dragIds=null; });
+  card.addEventListener('dragover',e=>{ const z=e.target.closest && e.target.closest('[data-drop]'); if(!z||!dragIds) return; e.preventDefault(); try{e.dataTransfer.dropEffect='move';}catch(_){}
+    card.querySelectorAll('[data-drop].over').forEach(x=>{ if(x!==z) x.classList.remove('over'); }); z.classList.add('over'); });
+  card.addEventListener('dragleave',e=>{ const z=e.target.closest && e.target.closest('[data-drop]'); if(z && !z.contains(e.relatedTarget)) z.classList.remove('over'); });
+  card.addEventListener('drop',e=>{ const z=e.target.closest && e.target.closest('[data-drop]'); if(!z||!dragIds) return; e.preventDefault();
+    const ids=dragIds; dragIds=null; card.classList.remove('dragging'); z.classList.remove('over'); assign(ids, z.dataset.drop); });
+  /* 끄는 중에 목록 칸 위·아래 끝에 닿으면 자동 스크롤 */
+  card.addEventListener('dragover',e=>{ const p=$('asgPool'); if(!dragIds||!p.contains(e.target)) return; const r=p.getBoundingClientRect();
+    if(e.clientY<r.top+40) p.scrollTop-=12; else if(e.clientY>r.bottom-40) p.scrollTop+=12; });
+
+  /* 화면 위·아래 끝으로 끌면 페이지도 따라 스크롤 */
+  document.addEventListener('dragover',e=>{ if(!dragIds) return; const top=($('appbar').offsetHeight||0)+40;
+    if(e.clientY>innerHeight-90) window.scrollBy(0,16); else if(e.clientY<top) window.scrollBy(0,-16); });
+
+  /* 결과 복사 (엑셀 붙여넣기용 탭 구분) */
+  function copyOut(){
+    const hd=['배정','대리점','UCS코드','지역','현재 담당','사무실 도로거리(km)','등록 유피','25년 월평균(천원)',...Array.from({length:MN},(_,i)=>`26년 ${i+1}월(천원)`),'26년 월평균(천원)','증감(%)'];
+    const line=(k,d)=>[k,d.a.name,d.a.ucs,d.a.region,d.a.emp,Math.round(d.road),d.up,d.a25===null?'':Math.round(d.a25),...d.m26.map(v=>Math.round(v)),Math.round(d.a26),d.chg===null?'':(d.chg*100).toFixed(1)].join('\t');
+    const out=[hd.join('\t')];
+    [['p','박도율'],['m','문길환'],[null,'미배정']].forEach(([k,l])=>{
+      AG.filter(a=>(A[a.ucs]||null)===k).map(a=>dOf(a.ucs)).sort((x,y)=>y.a26-x.a26).forEach(d=>out.push(line(l,d))); });
+    out.push('');
+    [['p','박도율'],['m','문길환']].forEach(([k,l])=>{ const s=stat(AG.filter(a=>A[a.ucs]===k).map(a=>dOf(a.ucs)));
+      out.push([l+' 합계', s.n+'곳','','','',Math.round(s.avgRoad)+'(평균)',s.up,Math.round(s.a25),...s.m.map(Math.round),Math.round(s.a26),s.chg===null?'':(s.chg*100).toFixed(1)].join('\t')); });
+    const txt=out.join('\n'), btn=$('asgCopy');
+    const done=ok=>{ btn.textContent= ok? '복사됨 · 엑셀에 붙여넣기' : '복사 실패 · 다시 눌러 주세요'; setTimeout(()=>btn.textContent='결과 복사',2200); };
+    const fallback=()=>{ const ta=document.createElement('textarea'); ta.value=txt; ta.style.cssText='position:fixed;left:-9999px'; document.body.appendChild(ta); ta.select(); let ok=false; try{ ok=document.execCommand('copy'); }catch(_){} ta.remove(); done(ok); };
+    if(navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(txt).then(()=>done(true), fallback); else fallback();
+  }
+
+  /* 사무실 위치를 바꾸면 거리도 다시 */
+  $('office').addEventListener('change',()=>{ if(document.body.dataset.tab==='asg') render(); });
+})();
+/* 화면 전체 render에 담당 탭 갱신 연결 */
+(function(){ const _ra=render; render=function(){ _ra(); if(document.body.dataset.tab==='asg') renderAsg(); }; })();
+
+</script>
 <script id="glass7js">
 /* ===================== v7 글래스: 좌측 레일 + 하단 탭으로 화면 나누기 ===================== */
 (function(){
-  const TABS=[['ov','개요'],['cur','당월'],['bgt','예산'],['sg','견본'],['org','조직'],['map','지도'],['list','목록']];
+  const TABS=[['ov','개요'],['cur','당월'],['bgt','예산'],['sg','견본'],['org','조직'],['asg','담당'],['map','지도'],['list','목록']];
   const DT=new Set(['ov','cur','sg','org']);           // 대리점 상세 화면에도 있는 탭
-  const TITLE={ov:'매출 개요',cur:'당월 매출',bgt:'지역별 예산',sg:'견본 지급',org:'조직 현황',map:'대리점 지도',list:'대리점 목록'};
+  const TITLE={ov:'매출 개요',cur:'당월 매출',bgt:'지역별 예산',sg:'견본 지급',org:'조직 현황',asg:'담당 배분',map:'대리점 지도',list:'대리점 목록'};
   const ICON={
     ov:'M3 11l9-7 9 7v9a1 1 0 0 1-1 1h-5v-6h-6v6H4a1 1 0 0 1-1-1z',
     cur:'M4 6h16v15H4zM4 10h16M9 3v4M15 3v4',
     bgt:'M3 7h15a3 3 0 0 1 3 3v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2zM3 7l11-4 2 4M16 14h2',
     sg:'M3 9h18v4H3zM5 13v8h14v-8M12 9v12M12 9c-2-4-6-4-6-1s4 1 6 1c2 0 6 2 6-1s-4-3-6 1',
     org:'M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM2 21c0-4 3-6 7-6s7 2 7 6M17 11a3 3 0 1 0 0-6M22 20c0-3-2-5-5-5',
+    asg:'M16 3l4 4-4 4M20 7H9M8 21l-4-4 4-4M4 17h11',
     map:'M12 21s-7-6-7-12a7 7 0 0 1 14 0c0 6-7 12-7 12zM12 11.5a2.5 2.5 0 1 0 0-5 2.5 2.5 0 0 0 0 5z',
     list:'M9 6h12M9 12h12M9 18h12M4 6h.01M4 12h.01M4 18h.01'
   };
   const svg=d=>`<svg aria-hidden="true" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="${d}"/></svg>`;
 
   /* 카드마다 어느 탭에 속하는지 표시 */
-  const OVM={curCard:'cur',bgtCard:'bgt',sgCard:'sg',orgCard:'org',ocCard:'org',mapCard:'map'};
+  const OVM={curCard:'cur',bgtCard:'bgt',sgCard:'sg',orgCard:'org',ocCard:'org',asgCard:'asg',mapCard:'map'};
   const ovKids=[...$('overview').children];
   ovKids.forEach((c,i)=>{ c.dataset.t = OVM[c.id] || (i===ovKids.length-1 ? 'list' : 'ov'); });
   const DTM={dCurCard:'cur',dOrgCard:'org',dSgCard:'sg'};
@@ -3042,7 +3369,7 @@ render();
   const _r=render;
   render=function(){
     apply(); _r();
-    if(!S.sel) $('title').textContent = SCOPES.find(s=>s.k===S.scope).label + ' ' + TITLE[ovTab];
+    if(!S.sel) $('title').textContent = ovTab==='asg'? TITLE.asg : SCOPES.find(s=>s.k===S.scope).label + ' ' + TITLE[ovTab];
   };
   function fadeIn(){
     const el=S.sel? $('detail') : $('overview');
